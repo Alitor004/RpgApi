@@ -249,3 +249,8 @@ D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPat
 D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\Newtonsoft.Json.dll
 D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
+D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\web.config
+D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\appsettings.Development.json
+D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\appsettings.json
+D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\RpgApi.deps.json
+D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\RpgApi.runtimeconfig.json

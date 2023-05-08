@@ -10,6 +10,7 @@ namespace RpgApi.Controllers
 {
     [ApiController]
     [Route("[Controller]")]
+    
     public class ArmasController : ControllerBase
     {
         private readonly DataContext _context;

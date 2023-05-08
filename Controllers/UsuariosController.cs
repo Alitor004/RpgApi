@@ -121,6 +121,23 @@ namespace RpgApi.Controllers
 
         }
 
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                Usuario aRemove = await _context.Usuarios.FirstOrDefaultAsync(p => p.Id == id);
+
+                _context.Usuarios.Remove(aRemove);
+                int linhasAfetedas = await _context.SaveChangesAsync();
+                return Ok(linhasAfetedas);
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
 
 
 

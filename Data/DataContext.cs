@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using RpgApi.Models;
 using RpgApi.Models.Enum;
 using RpgApi.Utils;
+using System.Collections.Generic;
 
 namespace RpgApi.Data
 {
@@ -21,6 +22,8 @@ namespace RpgApi.Data
         public DbSet<Habilidade> Habilidades { get; set; }
 
         public DbSet<PersonagemHabilidade> PersonegemHabilidades { get; set; }
+
+        public DbSet<Disputa> Disputas { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
