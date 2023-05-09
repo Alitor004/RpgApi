@@ -30,7 +30,7 @@ namespace RpgApi.Controllers
             {
                 Personagem personagem = await _context.Personagens
                     .Include(p => p.Arma)
-                    .Include(p => p.PersonagemHabilidades).ThenInclude(ps=> ps.Habilidade)
+                    .Include(p => p.PersonagemHabilidade).ThenInclude(ps=> ps.Habilidade)
                     .FirstOrDefaultAsync(p => p.Id == novoPersonagemHabilidade.PersonagemId);
 
                 if(personagem == null)

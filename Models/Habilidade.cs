@@ -5,6 +5,6 @@ namespace RpgApi.Models
         public int Id { get; set; }
         public string Nome { get; set; }
         public int Dano { get; set; }
-        public List<PersonagemHabilidade> PersonagemHabilidades { get; set; }
+        public List<PersonagemHabilidade> PersonagemHabilidade { get; set; }
     }
 }

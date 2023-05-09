@@ -349,3 +349,8 @@ D:\2DS_Alex\DSI\RpgApi\obj\Debug\net7.0\refint\RpgApi.dll
 D:\2DS_Alex\DSI\RpgApi\obj\Debug\net7.0\RpgApi.pdb
 D:\2DS_Alex\DSI\RpgApi\obj\Debug\net7.0\RpgApi.genruntimeconfig.cache
 D:\2DS_Alex\DSI\RpgApi\obj\Debug\net7.0\ref\RpgApi.dll
+D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\publish\web.config
+D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\publish\appsettings.Development.json
+D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\publish\appsettings.json
+D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\publish\RpgApi.deps.json
+D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\publish\RpgApi.runtimeconfig.json

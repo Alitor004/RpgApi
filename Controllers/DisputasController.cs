@@ -75,7 +75,7 @@ namespace RpgApi.Controllers
             try
             {
                 Personagem atacante = await _context.Personagens
-                    .Include(p => p.PersonagemHabilidades)
+                    .Include(p => p.PersonagemHabilidade)
                     .ThenInclude(ph => ph.Habilidade)
                     .FirstOrDefaultAsync(p => p.Id == d.AtacanteId);
 
