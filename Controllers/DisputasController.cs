@@ -50,11 +50,11 @@ namespace RpgApi.Controllers
 
                 StringBuilder dados = new StringBuilder();
                 dados.AppendFormat("Atacante: {0}. ", atacante.Nome);
-                dados.AppendFormat("Oponente: {0}. ", oponente.Nome);
-                dados.AppendFormat("Pontos de vida do atacante: {0}.", atacante.PontosVida);
-                dados.AppendFormat("Pontos de vida do oponente: {0}.", oponente.PontosVida);
-                dados.AppendFormat("Arma Utilizada: {0}.", atacante.Arma.Nome);
-                dados.AppendFormat("Dano: {0}.", dano);
+                dados.AppendFormat(" Oponente: {0}. ", oponente.Nome);
+                dados.AppendFormat(" Pontos de vida do atacante: {0}.", atacante.PontosVida);
+                dados.AppendFormat(" Pontos de vida do oponente: {0}.", oponente.PontosVida);
+                dados.AppendFormat(" Arma Utilizada: {0}.", atacante.Arma.Nome);
+                dados.AppendFormat(" Dano: {0}.", dano);
 
                 d.Narracao += dados.ToString();
                 d.DataDisputa = DateTime.Now;
@@ -82,7 +82,7 @@ namespace RpgApi.Controllers
                 Personagem oponente = await _context.Personagens
                     .FirstOrDefaultAsync(p => p.Id == d.OponenteId);
 
-                PersonagemHabilidade ph = await _context.PersonegemHabilidades
+                PersonagemHabilidade ph = await _context.PersonagemHabilidades
                     .Include(p => p.Habilidade)
                     .FirstOrDefaultAsync(phBusca => phBusca.HabilidadeId == d.HabilidadeId
                     && phBusca.PersonagemId == d.AtacanteId);
@@ -104,11 +104,11 @@ namespace RpgApi.Controllers
 
                     StringBuilder dados = new StringBuilder();
                     dados.AppendFormat("Atacante: {0}. ", atacante.Nome);
-                    dados.AppendFormat("Oponente: {0}. ", oponente.Nome);
-                    dados.AppendFormat("Pontos de vida do atacante: {0}.", atacante.PontosVida);
-                    dados.AppendFormat("Pontos de vida do oponente: {0}.", oponente.PontosVida);
-                    dados.AppendFormat("Habilidade Utilizada: {0}.", atacante.Arma.Nome);
-                    dados.AppendFormat("Dano: {0}.", dano);
+                    dados.AppendFormat(" Oponente: {0}. ", oponente.Nome);
+                    dados.AppendFormat(" Pontos de vida do atacante: {0}.", atacante.PontosVida);
+                    dados.AppendFormat(" Pontos de vida do oponente: {0}.", oponente.PontosVida);
+                    dados.AppendFormat(" Habilidade Utilizada: {0}.", atacante.Arma.Nome);
+                    dados.AppendFormat(" Dano: {0}.", dano);
 
                     d.Narracao += dados.ToString();
                     d.DataDisputa = DateTime.Now;

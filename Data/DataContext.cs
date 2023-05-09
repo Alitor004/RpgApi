@@ -21,7 +21,7 @@ namespace RpgApi.Data
 
         public DbSet<Habilidade> Habilidades { get; set; }
 
-        public DbSet<PersonagemHabilidade> PersonegemHabilidades { get; set; }
+        public DbSet<PersonagemHabilidade> PersonagemHabilidades { get; set; }
 
         public DbSet<Disputa> Disputas { get; set; }
 

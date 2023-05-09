@@ -10,9 +10,3 @@ INSERT INTO TB_Disputas VALUES
 (getdate(), 3, 6, 'Galadriel atacou Celeborn usando Machado com o dano 48.'),
 (getdate(), 7, 2, 'Atacante: Radagast. Oponente: Sam.  Pontos de vida do atacante: 100.  Pontos de vida do oponente: 66.  Arma Utilizada: Cajado.  Dano: 9.'),
 (getdate(), 5, 4, 'Atacante: Hobbit. Oponente: Gandalf.  Pontos de vida do atacante: 100.  Pontos de vida do oponente: 52.  Habilidade Utilizada: Adormecer.  Dano: 48.')
-
-  
-
-
-  
-

@@ -46,7 +46,7 @@ namespace RpgApi.Controllers
                 PersonagemHabilidade ph = new PersonagemHabilidade();
                 ph.Personagem = personagem;
                 ph.Habilidade = habilidade;
-                await _context.PersonegemHabilidades.AddAsync(ph);
+                await _context.PersonagemHabilidades.AddAsync(ph);
                 int linhasAfetedas = await _context.SaveChangesAsync();
 
                 return Ok(linhasAfetedas);
