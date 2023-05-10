@@ -1,6 +1,4 @@
-using RpgApi.Models;
 using System.ComponentModel.DataAnnotations.Schema;
-using System;
 
 namespace RpgApi.Models
 {

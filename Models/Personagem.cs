@@ -1,6 +1,6 @@
-using RpgApi.Models.Enum;
-using RpgApi.Models;
+using RpgApi.Models.Enuns;
 using System.Text.Json.Serialization;
+
 
 namespace RpgApi.Models
 {
@@ -23,7 +23,7 @@ namespace RpgApi.Models
         [JsonIgnore]
         public Arma Arma { get; set; }
 
-        public List<PersonagemHabilidade> PersonagemHabilidade { get; set; }
+        public List<PersonagemHabilidade> PersonagemHabilidades { get; set; }
         public int Disputas { get; set; }
         public int Vitorias { get; set; }
         public int Derrotas { get; set; }

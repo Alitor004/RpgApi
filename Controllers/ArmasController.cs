@@ -1,16 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
-using RpgApi.Models;
-using RpgApi.Models.Enum;
-using RpgApi.Data;
-using System;
 using Microsoft.EntityFrameworkCore;
+using RpgApi.Data;
+using RpgApi.Models;
 
 
 namespace RpgApi.Controllers
 {
     [ApiController]
     [Route("[Controller]")]
-    
     public class ArmasController : ControllerBase
     {
         private readonly DataContext _context;
@@ -20,16 +17,18 @@ namespace RpgApi.Controllers
             _context = context;
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetSingle(int id)
+        [HttpGet("{id}")] //Buscar pelo id
+        public async Task<IActionResult> GetSingle(int id)//using using System.Threading.Tasks;
         {
             try
             {
-                Arma a = await _context.Armas.FirstOrDefaultAsync(pBusca => pBusca.Id == id);
+                Arma a = await _context.Armas
+                       .FirstOrDefaultAsync(aBusca => aBusca.Id == id);
+                //using Microsoft.EntityFrameworkCore;
 
                 return Ok(a);
             }
-            catch(Exception ex)
+            catch (System.Exception ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -40,14 +39,15 @@ namespace RpgApi.Controllers
         {
             try
             {
-                List<Arma> lista = await _context.Armas.ToListAsync();
+                //using System.Collections.Generic;
+                List<Arma> lista = await _context.Armas
+                    .ToListAsync();
                 return Ok(lista);
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 return BadRequest(ex.Message);
             }
-
         }
 
         [HttpPost]
@@ -55,25 +55,29 @@ namespace RpgApi.Controllers
         {
             try
             {
-                if(novaArma.Dano > 30)
+                if (novaArma.Dano == 0)
                 {
-                    throw new Exception("Dano não podem ser maior que 30");
+                    throw new System.Exception("O dano da arma não pode ser 0");
                 }
 
+                Personagem p = await _context.Personagens
+                    .FirstOrDefaultAsync(p => p.Id == novaArma.PersonagemId);
 
-                Personagem p = await _context.Personagens.FirstOrDefaultAsync(p => p.Id == novaArma.PersonagemId);
                 if (p == null)
-                {
-                throw new System.Exception("Não existe personagem com o Id informado");
-                }
-            
+                    throw new Exception("Não existe Pesonagem com o Id informado");
+
+
+                Arma buscaArma = await _context.Armas.FirstOrDefaultAsync(a => a.PersonagemId == novaArma.PersonagemId);
+
+                if (buscaArma != null)
+                    throw new Exception("O Personagem informado já contém uma arma atribuída a ele.");
+
                 await _context.Armas.AddAsync(novaArma);
                 await _context.SaveChangesAsync();
 
-                List<Arma> lista = await _context.Armas.ToListAsync();
-                return Ok(lista);
+                return Ok(novaArma.Id);
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -84,16 +88,21 @@ namespace RpgApi.Controllers
         {
             try
             {
-                if(novaArma.Dano > 30)
+                if (novaArma.Dano == 0)
                 {
-                    throw new Exception("Dano não podem ser maior que 30");
+                    throw new System.Exception("O dano da arma não pode ser 0");
                 }
-                _context.Armas.Update(novaArma);
-                int linhasAfetedas = await _context.SaveChangesAsync();
 
-                return Ok(linhasAfetedas);
+
+
+
+
+                _context.Armas.Update(novaArma);
+                int linhaAfetadas = await _context.SaveChangesAsync();
+
+                return Ok(linhaAfetadas);
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -104,11 +113,13 @@ namespace RpgApi.Controllers
         {
             try
             {
-                Arma aRemove = await _context.Armas.FirstOrDefaultAsync(p => p.Id == id);
+                Arma aRemover = await _context.Armas
+                   .FirstOrDefaultAsync(p => p.Id == id);
 
-                _context.Armas.Remove(aRemove);
-                int linhasAfetedas = await _context.SaveChangesAsync();
-                return Ok(linhasAfetedas);
+                _context.Armas.Remove(aRemover);
+                int linhaAfetadas = await _context.SaveChangesAsync();
+
+                return Ok(linhaAfetadas);
             }
             catch (System.Exception ex)
             {
@@ -119,16 +130,5 @@ namespace RpgApi.Controllers
 
 
 
-
-
-
-
-
-
-
     }
-
-
-
-
 }

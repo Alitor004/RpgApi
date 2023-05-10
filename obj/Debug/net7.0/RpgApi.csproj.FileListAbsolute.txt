@@ -354,3 +354,13 @@ D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\publish\apps
 D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\publish\appsettings.json
 D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\publish\RpgApi.deps.json
 D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\publish\RpgApi.runtimeconfig.json
+F:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\publish\web.config
+F:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\web.config
+F:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\appsettings.Development.json
+F:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\appsettings.json
+F:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\publish\appsettings.Development.json
+F:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\publish\appsettings.json
+F:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\publish\RpgApi.deps.json
+F:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\publish\RpgApi.runtimeconfig.json
+F:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\RpgApi.deps.json
+F:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\Debug\net7.0\publish\publish\RpgApi.runtimeconfig.json

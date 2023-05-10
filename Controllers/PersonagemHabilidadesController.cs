@@ -1,23 +1,18 @@
+
 using Microsoft.AspNetCore.Mvc;
-using RpgApi.Models;
-using RpgApi.Models.Enum;
 using RpgApi.Data;
+using RpgApi.Models;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using RpgApi.Utils;
-using System.Collections.Generic;
-using System.Linq;
-
 
 namespace RpgApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    
     public class PersonagemHabilidadesController : ControllerBase
     {
-        private readonly DataContext _context;
 
+        private readonly DataContext _context;
         public PersonagemHabilidadesController(DataContext context)
         {
             _context = context;
@@ -30,26 +25,25 @@ namespace RpgApi.Controllers
             {
                 Personagem personagem = await _context.Personagens
                     .Include(p => p.Arma)
-                    .Include(p => p.PersonagemHabilidade).ThenInclude(ps=> ps.Habilidade)
+                    .Include(p => p.PersonagemHabilidades).ThenInclude(ps => ps.Habilidade)
                     .FirstOrDefaultAsync(p => p.Id == novoPersonagemHabilidade.PersonagemId);
 
-                if(personagem == null)
-                    throw new System.Exception("Personagem não encontrado para o Id informado.");
+                if (personagem == null)
+                    throw new System.Exception("Personagem não encontrado para o Id Informado.");
 
                 Habilidade habilidade = await _context.Habilidades
-                    .FirstOrDefaultAsync(h => h.Id == novoPersonagemHabilidade.HabilidadeId);
+                                    .FirstOrDefaultAsync(h => h.Id == novoPersonagemHabilidade.HabilidadeId);
 
-                if(habilidade == null)
+                if (habilidade == null)
                     throw new System.Exception("Habilidade não encontrada.");
-
 
                 PersonagemHabilidade ph = new PersonagemHabilidade();
                 ph.Personagem = personagem;
                 ph.Habilidade = habilidade;
                 await _context.PersonagemHabilidades.AddAsync(ph);
-                int linhasAfetedas = await _context.SaveChangesAsync();
+                int linhasAfetadas = await _context.SaveChangesAsync();
 
-                return Ok(linhasAfetedas);
+                return Ok(linhasAfetadas);
             }
             catch (System.Exception ex)
             {
@@ -57,47 +51,26 @@ namespace RpgApi.Controllers
             }
         }
 
-        /*[HttpGet("{id}")]
-        public async Task<IActionResult> GetSingle(int id)
+        [HttpGet("{personagemId}")]
+        public async Task<IActionResult> GetHabilidadesPersonagem(int personagemId)
         {
             try
             {
-                Personagem p = await _context.Personagens
-                    .Include(ar => ar.Arma)
-                    .Include(ph => ph.PersonagemHabilidades).ThenInclude(h => h.Habilidade)
-                    .FirstOrDefaultAsync(pBusca => pBusca.Id == id);
-
-                return Ok(p);
-            }
-            catch (System.Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }*/
-
-
-        /*[HttpGet("GetLista/{id}")]
-        public async Task<IActionResult> GetLista(int id)
-        {
-             try
-            {
                 List<PersonagemHabilidade> phLista = new List<PersonagemHabilidade>();
                 phLista = await _context.PersonagemHabilidades
-                    .Include(p => p.Personagem)
-                    .Include(p => p.Habilidade)
-                    .Where(p => p.Personagem.Id == id).ToListAsync();
-
+                .Include(p => p.Personagem)
+                .Include(p => p.Habilidade)
+                .Where(p => p.Personagem.Id == personagemId).ToListAsync();
                 return Ok(phLista);
             }
             catch (System.Exception ex)
             {
                 return BadRequest(ex.Message);
             }
-        }*/
+        }
 
-
-        [HttpGet("GetHAbilidades")]
-        public async Task<IActionResult> GetHAbilidade()
+        [HttpGet("GetHabilidades")]
+        public async Task<IActionResult> GetHabilidades()
         {
             try
             {
@@ -105,46 +78,35 @@ namespace RpgApi.Controllers
                 habilidades = await _context.Habilidades.ToListAsync();
                 return Ok(habilidades);
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 return BadRequest(ex.Message);
             }
-
         }
 
-        /*[HttpPost("DeletePersonagemHabilidade")]
-        public async Task<IActionResult> DeletePersonagemHabilidade(PersonagemHabilidade deletado)
+        [HttpPost("DeletePersonagemHabilidade")]
+        public async Task<IActionResult> DeleteAsync(PersonagemHabilidade ph)
         {
             try
             {
                 PersonagemHabilidade phRemover = await _context.PersonagemHabilidades
-                    .FirstOrDefaultAsync(p => p.PersonagemId == deletado.PersonagemId 
-                        && p.HabilidadeId == deletado.HabilidadeId);
-
-                if(phRemover == null)
-                    throw new System.Exception("Personagem ou Habilidade não encontrados.");
+                .FirstOrDefaultAsync(phBusca => phBusca.PersonagemId == ph.PersonagemId
+                && phBusca.HabilidadeId == ph.HabilidadeId);
+                
+                if (phRemover == null)
+                    throw new System.Exception("Personagem ou Habilidade não encontrados");
 
                 _context.PersonagemHabilidades.Remove(phRemover);
-                int linhasAfetedas = await _context.SaveChangesAsync();
-                return Ok(linhasAfetedas);
+                int linhasAfetadas = await _context.SaveChangesAsync();
+                return Ok(linhasAfetadas);
             }
             catch (System.Exception ex)
             {
                 return BadRequest(ex.Message);
             }
-        }*/
-
-
-
-
-
-
-
-
-
-
-
-
+        }
+        
+        
 
 
 

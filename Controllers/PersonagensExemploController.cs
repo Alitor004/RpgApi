@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using RpgApi.Models;
-using RpgApi.Models.Enum;
+using RpgApi.Models.Enuns;
 
 
 namespace RpgApi.Controllers
