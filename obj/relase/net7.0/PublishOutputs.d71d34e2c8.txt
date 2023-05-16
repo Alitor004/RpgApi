@@ -1,16 +1,6 @@
 D:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\RpgApi.exe
-D:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\publish\publish\web.config
-D:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\publish\web.config
 D:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\appsettings.Development.json
 D:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\appsettings.json
-D:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\publish\appsettings.Development.json
-D:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\publish\appsettings.json
-D:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\publish\publish\appsettings.Development.json
-D:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\publish\publish\appsettings.json
-D:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\publish\publish\RpgApi.deps.json
-D:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\publish\publish\RpgApi.runtimeconfig.json
-D:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\publish\RpgApi.deps.json
-D:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\publish\RpgApi.runtimeconfig.json
 D:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\RpgApi.dll
 D:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\RpgApi.runtimeconfig.json
 D:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\RpgApi.pdb

@@ -1,10 +1,5 @@
-D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\relase\net7.0\publish\web.config
 D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\relase\net7.0\appsettings.Development.json
 D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\relase\net7.0\appsettings.json
-D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\relase\net7.0\publish\appsettings.Development.json
-D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\relase\net7.0\publish\appsettings.json
-D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\relase\net7.0\publish\RpgApi.deps.json
-D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\relase\net7.0\publish\RpgApi.runtimeconfig.json
 D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\relase\net7.0\RpgApi.exe
 D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\relase\net7.0\RpgApi.deps.json
 D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\relase\net7.0\RpgApi.runtimeconfig.json
@@ -83,8 +78,3 @@ D:\2DS\Alitor\DSI\Aula04API\RpgApi\obj\relase\net7.0\refint\RpgApi.dll
 D:\2DS\Alitor\DSI\Aula04API\RpgApi\obj\relase\net7.0\RpgApi.pdb
 D:\2DS\Alitor\DSI\Aula04API\RpgApi\obj\relase\net7.0\RpgApi.genruntimeconfig.cache
 D:\2DS\Alitor\DSI\Aula04API\RpgApi\obj\relase\net7.0\ref\RpgApi.dll
-D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\relase\net7.0\publish\publish\web.config
-D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\relase\net7.0\publish\publish\appsettings.Development.json
-D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\relase\net7.0\publish\publish\appsettings.json
-D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\relase\net7.0\publish\publish\RpgApi.deps.json
-D:\2DS\Alitor\DSI\Aula04API\RpgApi\bin\relase\net7.0\publish\publish\RpgApi.runtimeconfig.json

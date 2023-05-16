@@ -48,7 +48,7 @@ namespace RpgApi.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PersonegemHabilidades",
+                name: "PersonagemHabilidades",
                 columns: table => new
                 {
                     PersonagemId = table.Column<int>(type: "int", nullable: false),
@@ -56,15 +56,15 @@ namespace RpgApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PersonegemHabilidades", x => new { x.PersonagemId, x.HabilidadeId });
+                    table.PrimaryKey("PK_PersonagemHabilidades", x => new { x.PersonagemId, x.HabilidadeId });
                     table.ForeignKey(
-                        name: "FK_PersonegemHabilidades_Habilidades_HabilidadeId",
+                        name: "FK_PersonagemHabilidades_Habilidades_HabilidadeId",
                         column: x => x.HabilidadeId,
                         principalTable: "Habilidades",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_PersonegemHabilidades_Personagens_PersonagemId",
+                        name: "FK_PersonagemHabilidades_Personagens_PersonagemId",
                         column: x => x.PersonagemId,
                         principalTable: "Personagens",
                         principalColumn: "Id",
@@ -138,7 +138,7 @@ namespace RpgApi.Migrations
                 values: new object[] { new byte[] { 187, 145, 149, 96, 72, 71, 197, 143, 75, 51, 107, 223, 221, 216, 96, 179, 170, 54, 137, 171, 16, 113, 126, 99, 124, 24, 12, 62, 125, 75, 69, 21, 84, 115, 174, 201, 172, 153, 204, 59, 184, 86, 232, 179, 134, 170, 31, 52, 196, 232, 153, 158, 241, 166, 105, 16, 153, 231, 106, 17, 190, 96, 157, 173 }, new byte[] { 185, 29, 89, 229, 225, 148, 9, 50, 60, 118, 59, 184, 10, 126, 15, 150, 5, 30, 191, 6, 3, 2, 32, 159, 130, 188, 44, 151, 179, 106, 235, 248, 54, 181, 161, 2, 25, 80, 218, 213, 19, 108, 196, 15, 231, 148, 252, 145, 98, 227, 179, 153, 17, 186, 226, 245, 109, 71, 169, 211, 113, 66, 8, 65, 65, 2, 102, 73, 204, 175, 51, 172, 37, 34, 89, 212, 253, 77, 76, 243, 103, 189, 26, 61, 174, 162, 154, 62, 108, 215, 114, 33, 76, 228, 15, 41, 20, 241, 163, 34, 251, 130, 21, 135, 154, 219, 74, 187, 241, 199, 5, 210, 73, 209, 41, 41, 190, 126, 162, 213, 157, 100, 44, 196, 15, 175, 55, 207 } });
 
             migrationBuilder.InsertData(
-                table: "PersonegemHabilidades",
+                table: "PersonagemHabilidades",
                 columns: new[] { "HabilidadeId", "PersonagemId" },
                 values: new object[,]
                 {
@@ -154,8 +154,8 @@ namespace RpgApi.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_PersonegemHabilidades_HabilidadeId",
-                table: "PersonegemHabilidades",
+                name: "IX_PersonagemHabilidades_HabilidadeId",
+                table: "PersonagemHabilidades",
                 column: "HabilidadeId");
         }
 
@@ -163,7 +163,7 @@ namespace RpgApi.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "PersonegemHabilidades");
+                name: "PersonagemHabilidades");
 
             migrationBuilder.DropTable(
                 name: "Habilidades");

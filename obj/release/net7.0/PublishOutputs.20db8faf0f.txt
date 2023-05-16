@@ -6,6 +6,8 @@ F:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\RpgApi.runtimeconfig.json
 F:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\RpgApi.pdb
 F:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\Azure.Core.dll
 F:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\Azure.Identity.dll
+F:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\Microsoft.AspNetCore.JsonPatch.dll
+F:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 F:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\Microsoft.AspNetCore.OpenApi.dll
 F:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\Microsoft.Bcl.AsyncInterfaces.dll
 F:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\Microsoft.Data.SqlClient.dll
@@ -24,6 +26,8 @@ F:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\Microsoft.IdentityModel.Tokens.dll
 F:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\Microsoft.OpenApi.dll
 F:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\Microsoft.SqlServer.Server.dll
 F:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\Microsoft.Win32.SystemEvents.dll
+F:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\Newtonsoft.Json.dll
+F:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\Newtonsoft.Json.Bson.dll
 F:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\Swashbuckle.AspNetCore.Swagger.dll
 F:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\Swashbuckle.AspNetCore.SwaggerGen.dll
 F:\2DS\Alitor\DSI\Aula04API\RpgApi\publish\Swashbuckle.AspNetCore.SwaggerUI.dll

@@ -217,19 +217,19 @@ SELECT @@ROWCOUNT;
 
 GO
 
-UPDATE [Armas] SET [PersonagemId] = 6
+UPDATE [Armas] SET [PersonagemId] = 5
 WHERE [Id] = 5;
 SELECT @@ROWCOUNT;
 
 GO
 
-UPDATE [Armas] SET [PersonagemId] = 7
+UPDATE [Armas] SET [PersonagemId] = 6
 WHERE [Id] = 6;
 SELECT @@ROWCOUNT;
 
 GO
 
-UPDATE [Armas] SET [PersonagemId] = 5
+UPDATE [Armas] SET [PersonagemId] = 7
 WHERE [Id] = 7;
 SELECT @@ROWCOUNT;
 
@@ -274,12 +274,12 @@ CREATE TABLE [Habilidades] (
 );
 GO
 
-CREATE TABLE [PersonegemHabilidades] (
+CREATE TABLE [PersonagemHabilidades] (
     [PersonagemId] int NOT NULL,
     [HabilidadeId] int NOT NULL,
-    CONSTRAINT [PK_PersonegemHabilidades] PRIMARY KEY ([PersonagemId], [HabilidadeId]),
-    CONSTRAINT [FK_PersonegemHabilidades_Habilidades_HabilidadeId] FOREIGN KEY ([HabilidadeId]) REFERENCES [Habilidades] ([Id]) ON DELETE CASCADE,
-    CONSTRAINT [FK_PersonegemHabilidades_Personagens_PersonagemId] FOREIGN KEY ([PersonagemId]) REFERENCES [Personagens] ([Id]) ON DELETE CASCADE
+    CONSTRAINT [PK_PersonagemHabilidades] PRIMARY KEY ([PersonagemId], [HabilidadeId]),
+    CONSTRAINT [FK_PersonagemHabilidades_Habilidades_HabilidadeId] FOREIGN KEY ([HabilidadeId]) REFERENCES [Habilidades] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_PersonagemHabilidades_Personagens_PersonagemId] FOREIGN KEY ([PersonagemId]) REFERENCES [Personagens] ([Id]) ON DELETE CASCADE
 );
 GO
 
@@ -341,9 +341,9 @@ SELECT @@ROWCOUNT;
 
 GO
 
-IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'HabilidadeId', N'PersonagemId') AND [object_id] = OBJECT_ID(N'[PersonegemHabilidades]'))
-    SET IDENTITY_INSERT [PersonegemHabilidades] ON;
-INSERT INTO [PersonegemHabilidades] ([HabilidadeId], [PersonagemId])
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'HabilidadeId', N'PersonagemId') AND [object_id] = OBJECT_ID(N'[PersonagemHabilidades]'))
+    SET IDENTITY_INSERT [PersonagemHabilidades] ON;
+INSERT INTO [PersonagemHabilidades] ([HabilidadeId], [PersonagemId])
 VALUES (1, 1),
 (2, 1),
 (2, 2),
@@ -353,11 +353,11 @@ VALUES (1, 1),
 (1, 5),
 (2, 6),
 (3, 7);
-IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'HabilidadeId', N'PersonagemId') AND [object_id] = OBJECT_ID(N'[PersonegemHabilidades]'))
-    SET IDENTITY_INSERT [PersonegemHabilidades] OFF;
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'HabilidadeId', N'PersonagemId') AND [object_id] = OBJECT_ID(N'[PersonagemHabilidades]'))
+    SET IDENTITY_INSERT [PersonagemHabilidades] OFF;
 GO
 
-CREATE INDEX [IX_PersonegemHabilidades_HabilidadeId] ON [PersonegemHabilidades] ([HabilidadeId]);
+CREATE INDEX [IX_PersonagemHabilidades_HabilidadeId] ON [PersonagemHabilidades] ([HabilidadeId]);
 GO
 
 INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])

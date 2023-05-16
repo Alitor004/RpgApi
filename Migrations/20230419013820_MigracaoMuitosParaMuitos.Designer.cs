@@ -293,7 +293,7 @@ namespace RpgApi.Migrations
 
                     b.HasIndex("HabilidadeId");
 
-                    b.ToTable("PersonegemHabilidades");
+                    b.ToTable("PersonagemHabilidades");
 
                     b.HasData(
                         new

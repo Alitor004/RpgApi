@@ -42,9 +42,9 @@ namespace RpgApi.Controllers
         }
 
         /*[HttpPost]
-        public IActionResult AddPersonagem(Personagem novoPersonegem)
+        public IActionResult AddPersonagem(Personagem novoPersonagem)
         {
-            personagens.Add(novoPersonegem);
+            personagens.Add(novoPersonagem);
             return Ok(personagens);
         }*/
 
