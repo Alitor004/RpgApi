@@ -2,10 +2,14 @@ using Microsoft.AspNetCore.Mvc;
 using RpgApi.Data;
 using RpgApi.Models;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
+using System.Linq;
+using System.Security.Claims;
 
 namespace RpgApi.Controllers
 {
+    [Authorize(Roles = "Jogador, Admin")]
     [ApiController]
     [Route("[Controller]")]
     public class PersonagensController : ControllerBase
@@ -13,10 +17,20 @@ namespace RpgApi.Controllers
         //Programação de toda a classe ficará aqui abaixo
         private readonly DataContext _context; //Declaração do atributo
 
-        public PersonagensController(DataContext context)
+        private readonly IConfiguration _configuration;
+
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public PersonagensController(DataContext context, IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
         {
-            //Inicialização do atributo a partir de um parâmetro          
             _context = context;
+            _configuration = configuration;
+            _httpContextAccessor = httpContextAccessor;
+        }
+
+        private int ObterUsuarioId()
+        {
+            return int.Parse(_httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
         }
 
         [HttpGet("{id}")] //Buscar pelo id
@@ -62,6 +76,9 @@ namespace RpgApi.Controllers
                 {
                     throw new System.Exception("Pontos de vida não pode ser maior que 100");
                 }
+
+                novoPersonagem.Usuario = _context.Usuarios.FirstOrDefault(uBusca => uBusca.Id == ObterUsuarioId());
+
                 await _context.Personagens.AddAsync(novoPersonagem);
                 await _context.SaveChangesAsync();
 
@@ -82,6 +99,9 @@ namespace RpgApi.Controllers
                 {
                     throw new System.Exception("Pontos de vida não pode ser maior que 100");
                 }
+
+                novoPersonagem.Usuario = _context.Usuarios.FirstOrDefault(uBusca => uBusca.Id == ObterUsuarioId());
+
                 _context.Personagens.Update(novoPersonagem);
                 int linhasAfetadas = await _context.SaveChangesAsync();
 
@@ -206,13 +226,15 @@ namespace RpgApi.Controllers
         }
 
 
-        [HttpGet("GetByUser/{userId}")]
-        public async Task<IActionResult> GetByUserAsync(int userId)
+        [HttpGet("GetByUser")]
+        public async Task<IActionResult> GetByUserAsync()
         {
             try
             {
+                int id = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value);
+
                 List<Personagem> lista = await _context.Personagens
-                            .Where(u => u.Usuario.Id == userId)
+                            .Where(u => u.Usuario.Id == id)
                             .ToListAsync();
 
                 return Ok(lista);

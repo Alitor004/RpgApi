@@ -1,25 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "D:\\2DS\\Alitor\\DSI\\Aula04API\\RpgApi\\RpgApi.csproj": {}
+    "C:\\Users\\alevi\\OneDrive\\Área de Trabalho\\Estudos\\RpgApi\\RpgApi.csproj": {}
   },
   "projects": {
-    "D:\\2DS\\Alitor\\DSI\\Aula04API\\RpgApi\\RpgApi.csproj": {
+    "C:\\Users\\alevi\\OneDrive\\Área de Trabalho\\Estudos\\RpgApi\\RpgApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\2DS\\Alitor\\DSI\\Aula04API\\RpgApi\\RpgApi.csproj",
+        "projectUniqueName": "C:\\Users\\alevi\\OneDrive\\Área de Trabalho\\Estudos\\RpgApi\\RpgApi.csproj",
         "projectName": "RpgApi",
-        "projectPath": "D:\\2DS\\Alitor\\DSI\\Aula04API\\RpgApi\\RpgApi.csproj",
+        "projectPath": "C:\\Users\\alevi\\OneDrive\\Área de Trabalho\\Estudos\\RpgApi\\RpgApi.csproj",
         "packagesPath": "C:\\Users\\alevi\\.nuget\\packages\\",
-        "outputPath": "D:\\2DS\\Alitor\\DSI\\Aula04API\\RpgApi\\obj\\",
+        "outputPath": "C:\\Users\\alevi\\OneDrive\\Área de Trabalho\\Estudos\\RpgApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\alevi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\alevi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,6 +46,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
               "version": "[7.0.5, )"
@@ -56,9 +68,17 @@
               "target": "Package",
               "version": "[7.0.4, )"
             },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.32.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.32.1, )"
             }
           },
           "imports": [
@@ -80,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.105\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

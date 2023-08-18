@@ -18,5 +18,8 @@ namespace RpgApi.Models
         public List<Personagem> Personagens { get; set; }
         public string Perfil { get; set; }
         public string Email { get; set; }
+        
+        [NotMapped]
+        public string Token { get; set; }
     }
 }
