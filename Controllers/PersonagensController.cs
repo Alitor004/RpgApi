@@ -33,6 +33,11 @@ namespace RpgApi.Controllers
             return int.Parse(_httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
         }
 
+        private string ObterPerfilUsuario()
+        {
+            return _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Role);
+        }
+
         [HttpGet("{id}")] //Buscar pelo id
         public async Task<IActionResult> GetSingle(int id)
         {
@@ -245,20 +250,18 @@ namespace RpgApi.Controllers
             }
         }
 
-        [HttpGet("GetByPerfil/userId")]
-        public async Task<IActionResult> GetByPerfilAsync(int userId)
+        [HttpGet("GetByPerfil")]
+        public async Task<IActionResult> GetByPerfilAsync()
         {
             try
             {
-                Usuario usuario = await _context.Usuarios
-                   .FirstOrDefaultAsync(x => x.Id == userId);
-
                 List<Personagem> lista = new List<Personagem>();
-                if (usuario.Perfil == "Admin")
+
+                if (ObterPerfilUsuario() == "Admin")
                     lista = await _context.Personagens.ToListAsync();
                 else
                     lista = await _context.Personagens
-                            .Where(p => p.Usuario.Id == userId).ToListAsync();
+                            .Where(p => p.Usuario.Id == ObterUsuarioId()).ToListAsync();
 
                 return Ok(lista);
             }
